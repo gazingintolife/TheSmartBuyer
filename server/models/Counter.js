@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const db = require("../server")
 
 const CounterSchema = new mongoose.Schema({
   count: {

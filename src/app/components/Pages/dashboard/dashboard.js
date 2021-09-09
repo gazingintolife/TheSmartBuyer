@@ -1,11 +1,12 @@
 import React from 'react';
+import DiscoveryMenu from './Discovery/DiscoveryMenu';
 import GroceryList from './groceryList';
 
 const dashboard = () => {
     return (
         <div className = "container row">
             <div className = "container  col">
-                <h1> This is dashboard </h1>
+                <DiscoveryMenu/>
             </div>
             <div className = "container col">
                 <GroceryList/>

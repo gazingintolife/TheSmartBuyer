@@ -1,7 +1,7 @@
-import { Mongoose } from "mongoose";
+const mongoose = require("mongoose");
 
 
-const { Schema } = Mongoose;
+const { Schema } = mongoose;
 
 const customerInfo = new Schema ({
     FirstName: String,
@@ -12,6 +12,8 @@ const customerInfo = new Schema ({
     Address: String,
     City: String,
     CurrentOrder: {
-        currentOrderInfo: String
+        currentOrderInfo: []
     }
 });
+
+module.exports = mongoose.model('customerModel' ,customerInfo);

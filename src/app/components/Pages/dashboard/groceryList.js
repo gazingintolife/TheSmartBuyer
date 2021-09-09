@@ -13,8 +13,20 @@ class GroceryList extends React.Component {
     }
 
     onSubmit = (product) => {
-        this.props.addProductToList(product);
-        //console.log(product);
+        // this.props.addProductToList(product);
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(product),
+        }
+        console.log(JSON.stringify(product));
+        fetch('/api/currentOrder', options)
+        .then(res => res.json())
+        .then(json => {
+            this.props.addProductToList(json);
+        })
     }
 
     render() {
