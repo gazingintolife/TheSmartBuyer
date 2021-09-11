@@ -1,9 +1,8 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 const Header = () => (
-  <header>
+  <header className="header-container">
     <Link to="/dashboard">SignUp</Link>
 
     <nav>

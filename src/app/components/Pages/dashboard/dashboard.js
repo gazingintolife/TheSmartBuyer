@@ -1,18 +1,17 @@
-import React from 'react';
-import DiscoveryMenu from './Discovery/DiscoveryMenu';
-import GroceryList from './groceryList';
+import React from "react";
+import DiscoveryMenu from "./Discovery/DiscoveryMenu";
+import GroceryList from "./groceryList";
+import "./Dashboard.scss"
 
 const dashboard = () => {
-    return (
-        <div className = "container row">
-            <div className = "container  col">
-                <DiscoveryMenu/>
-            </div>
-            <div className = "container col">
-                <GroceryList/>
-            </div>
-        </div>
-    )
-}
+	return (
+		<div className="container row">
+			<DiscoveryMenu />
+			<div className="container col grocery-list">
+				<GroceryList />
+			</div>
+		</div>
+	);
+};
 
 export default dashboard;

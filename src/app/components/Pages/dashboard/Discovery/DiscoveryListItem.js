@@ -1,21 +1,17 @@
-import React from 'react';
+import React from "react";
+import "./DiscoverMenu.scss"
 
-class DiscoveryListItem extends React.Component {
-    constructor(props){
-        super(props);
-    }
+const DiscoveryListItem = (props) => {
+	const onButtonClick = () => {
+		console.log("item deleted");
+	};
 
-    onButtonClick = () => {
-        console.log("item deleted")
-    }
-
-    render () {
-        return (
-            <div className = "container border border-warning">
-                <a>{this.props.category_id}</a>
-            </div>
-        );
-    }
-}
+	return (
+		<div className="discovery-list-item">
+      {props.item}
+      <img width="30px" src="images/logo.png" alt="" />
+		</div>
+	);
+};
 
 export default DiscoveryListItem;

@@ -1,35 +1,20 @@
-import React from "react";
-import DiscoveryList from "./DiscoveryList";
+import React, { useEffect, useState } from "react";
+import "./DiscoverMenu.scss";
 
-class DepartmentList extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            category: []
-        }
-    }
+const Department = (props) => {
+	return <div className="department">{props.department}</div>;
+};
 
-    componentDidMount(){
-        fetch('/api/getMenuItems', {method: 'GET'})
-    .then((res) => {
-        if(res.ok){
-            return res.json()
-        }else{
-            throw new Error("Something went wrong");
-        }
-    })
-    .then( json => {
-        this.setState(() => ({category: [...json]}))
-    })
-    }
-
-    render(){
-        return(
-            <div>
-                <DiscoveryList category = {this.state.category}/>
-            </div>
-        );
-    }
-}
+const DepartmentList = (props) => {
+	return (
+		<div className="departments-list">
+			{props.departments.map((department) => (
+				<div onClick={(e) => props.setSelectedDepartment(department)}>
+					<Department department={department} />
+				</div>
+			))}
+		</div>
+	);
+};
 
 export default DepartmentList;
