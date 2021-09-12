@@ -17,23 +17,23 @@ const DiscoveryMenu = () => {
 
 	const departments = category.map((x) => x.department);
 
-	const [selectedDepartment, setSelectedDepartment] = useState("Department 1");
+	const [selectedDepartment, setSelectedDepartment] =
+		useState("Department 1");
 	const [selectedCategories, setselectedCategories] = useState();
-	console.log("selectedDepartment", selectedDepartment);
 
-	useEffect(() => {
-		fetch("/api/getMenuItems", { method: "GET" })
-			.then((res) => {
-				if (res.ok) {
-					return res.json();
-				} else {
-					throw new Error("Something went wrong");
-				}
-			})
-			.then((json) => {
-				setCategory(...json);
-			});
-	}, []);
+	// useEffect(() => {
+	// 	fetch("/api/getMenuItems", { method: "GET" })
+	// 		.then((res) => {
+	// 			if (res.ok) {
+	// 				return res.json();
+	// 			} else {
+	// 				throw new Error("Something went wrong");
+	// 			}
+	// 		})
+	// 		.then((json) => {
+	// 			setCategory(...json);
+	// 		});
+	// }, []);
 
 	useEffect(() => {
 		const x = category.find((obj) => obj.department === selectedDepartment);
