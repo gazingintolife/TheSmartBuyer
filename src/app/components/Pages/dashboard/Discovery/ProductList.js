@@ -9,8 +9,8 @@ const ProductList = (props) => {
 	console.log(props);
 	return (
 		<>
-			{props?.products?.map((product) => (
-				<ProductListItem product={product} />
+			{props?.products?.map((product, i) => (
+				<ProductListItem key={i} product={product} />
 			))}
 		</>
 	);
