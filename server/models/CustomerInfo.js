@@ -4,13 +4,26 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const customerInfo = new Schema ({
-    FirstName: String,
-    LastName: String,
-    Email: String,
-    password: String,
-    PhoneNumber: Number,
-    Address: String,
-    City: String,
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    email: String,
+    password: {
+      type: String,
+      required: true,
+    },
+    mobile: {
+      type: String,
+      require: true,
+    },
+    address: String,
+    city: String,
+    status: String,
     CurrentOrder: {
         currentOrderInfo: []
     }
