@@ -13,6 +13,7 @@ import checkout from '../components/Pages/checkout/checkout';
 import contact from '../components/Pages/contact/contact';
 import account from '../components/Pages/account/account';
 import NotFound from '../components/NotFound/NotFound';
+import Login from '../components/Pages/dashboard/login/login';
 
 const App = () => (
   <Router>
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/checkout" component={checkout}/>
           <Route path="/contact" component={contact}/>
           <Route path="/account" component={account}/>
+          <Route path="/login" component={Login}/>
           <Route component={NotFound}/>
         </Switch>
 

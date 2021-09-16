@@ -10,7 +10,7 @@ class ListItem extends React.Component {
     }
 
     render () {
-        console.log(this.props.product);
+        // console.log(this.props.product);
         return (
             <div className = "container border border-warning">
                 <div className = "row">

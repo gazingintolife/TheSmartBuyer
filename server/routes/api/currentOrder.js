@@ -1,16 +1,13 @@
-const Order = require('../../models/CustomerInfo');
+const Order = require('../../models/currentOrder');
 
 module.exports = (app) => {
-    app.post('/api/currentOrder', (req, res, next) => {
-        const order = new Order({...req.body});
-    
-        try{
-          order.save()
-          .then(res.json(order));
-          console.log(order)
-          
-        }catch(err){
-          console.log(err);
-        }
-      });
+//     app.post('/api/currentOrder', (req, res, next) => {
+//       console.log(req.body.product)
+//       Order.findOne({customer: 'avinash'})
+//       .populate('product')
+//       .exec((err,product) => {
+//         if(err) return handleError(err);
+        
+//       })
+// })
 }
