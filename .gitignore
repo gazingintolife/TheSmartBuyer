@@ -1,6 +1,6 @@
 # Compiled files
 dist/
-
+.env
 
 # Node stuff
 node_modules

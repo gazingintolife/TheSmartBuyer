@@ -8,11 +8,11 @@ const ProductListItem = (props) => {
 const ProductList = (props) => {
 	console.log(props);
 	return (
-		<>
+		<div>
 			{props?.products?.map((product, i) => (
 				<ProductListItem key={i} product={product} />
 			))}
-		</>
+		</div>
 	);
 };
 

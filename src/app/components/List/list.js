@@ -8,7 +8,7 @@ class List extends React.Component {
     }
 
     render() {
-        console.log(this.props.product);
+        // console.log(this.props.product);
         return (
             <div>
                 {
