@@ -6,6 +6,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const customerInfoRouter = require('./routes/customerInfo');
 
 const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
@@ -30,6 +31,8 @@ app.use(express.json());
 
 // API routes
 require('./routes')(app);
+app.use('/api/v1/customer', customerInfoRouter);
+app.get('/', (req, res) => res.send('NOICE'));
 
 if (isDev) {
   const compiler = webpack(webpackConfig);
