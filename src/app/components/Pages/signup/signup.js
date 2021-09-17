@@ -2,10 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import SignUpForm from './signUpForm';
 
-const signup = () => {
+class Signup extends React.Component {
     
-    const onSignUpSubmit = (user) => {
+    constructor(props){
+        super(props);
+    }
 
+    onSignUpSubmit = (user) => {
         const options = {
             method: 'POST',
             headers: {
@@ -16,13 +19,17 @@ const signup = () => {
 
         fetch('/api/signup', options)
     }
+
+    render(){
+        return (
+            <div>
+                <SignUpForm onSubmit = {this.onSignUpSubmit}/>
+                <Link to = "/login">Login</Link>
+            </div>
+            )
+        
+    }
     
-    return (
-        <div>
-            <SignUpForm onSubmit = {onSignUpSubmit}/>
-            <Link to = "/login">Login</Link>
-        </div>
-    )
 }
 
-export default signup;
+export default Signup;
