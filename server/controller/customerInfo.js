@@ -13,7 +13,7 @@ const getAllCustomerInfo = async (req, res) => {
       body: customers,
     });
   } catch(error) {
-    res.status(404).json({
+    res.status(400).json({
       success: false,
       error: error.message,
     });
@@ -35,7 +35,7 @@ const getCustomerInfo = async (req, res) => {
       body: customer,
     })
   } catch(error) {
-    res.status(404).json({
+    res.status(400).json({
       success: false,
       error: error.message,
     })
@@ -58,7 +58,7 @@ const updateCustomerInfo = async (req, res) => {
       body: customer,
     })
   } catch(error) {
-    res.status(404).json({
+    res.status(400).json({
       success: false,
       error: error.message,
     })
@@ -94,7 +94,7 @@ const signUpCustomer = async (req, res) => {
       body: customer,
     })
   } catch(error) {
-    res.status(404).json({
+    res.status(400).json({
       success: false,
       error: error.message,
     })
@@ -125,7 +125,7 @@ const loginCustomer = async (req, res) => {
       token: token,
     })
   } catch(error) {
-    res.status(404).json({
+    res.status(400).json({
       success: false,
       error: error.message,
     })
