@@ -13,7 +13,8 @@ import checkout from '../components/Pages/checkout/checkout';
 import contact from '../components/Pages/contact/contact';
 import account from '../components/Pages/account/account';
 import NotFound from '../components/NotFound/NotFound';
-import Login from '../components/Pages/login/login';
+import login from '../components/Pages/login/login';
+import PrivateRoute from './privateRoute';
 
 const App = () => (
   <Router>
@@ -22,11 +23,11 @@ const App = () => (
 
         <Switch>
           <Route exact path="/signup" component={signup}/>
-          <Route path="/dashboard" component={dashboard}/>
-          <Route path="/checkout" component={checkout}/>
+          <Route path="/login" component={login}/>
           <Route path="/contact" component={contact}/>
-          <Route path="/account" component={account}/>
-          <Route path="/login" component={Login}/>
+          <PrivateRoute path= "/dashboard/:id?" component={dashboard}/>
+          <PrivateRoute path="/checkout" component={checkout}/>
+          <PrivateRoute path="/account" component={account}/>
           <Route component={NotFound}/>
         </Switch>
 

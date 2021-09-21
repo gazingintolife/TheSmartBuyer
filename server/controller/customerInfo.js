@@ -123,6 +123,7 @@ const loginCustomer = async (req, res) => {
     res.status(200).header('auth-token', token).json({
       success: true,
       token: token,
+      body: mobileChecker
     })
   } catch(error) {
     res.status(404).json({

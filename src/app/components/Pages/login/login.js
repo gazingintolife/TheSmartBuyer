@@ -1,4 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+import { userLoggedIn } from "../../../actions/signup";
+
+const axios = require('axios').default;
 
 class Login extends React.Component {
     constructor(props){
@@ -10,7 +14,7 @@ class Login extends React.Component {
         }
     }
 
-    onmobileChange = (e) => {
+    onMobileChange = (e) => {
         const mobile = e.target.value;
         this.setState(() => ({mobile:mobile}))
     }
@@ -28,7 +32,31 @@ class Login extends React.Component {
         }
         else {
             this.setState(() => ({error: ''}));
-            
+            const user = {
+                mobile: this.state.mobile,
+                password: this.state.password
+            }
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            axios.post('/api/v1/customer/login',user, options)
+            .then(response => {
+                this.props.userLoggedOn({
+                    _id: response.data.body._id,
+                    firstName: response.data.body.firstName,
+                    lastName: response.data.body.lastName
+                })
+                if(response.status === 200){
+                    localStorage.setItem('auth-token',response.data.token);
+                    this.props.history.push(`/dashboard/${this.props._id}`)
+                }
+                console.log(response)
+            }
+            )
+
             this.setState(() => ({
                 mobile: '',
                 password: ''
@@ -60,4 +88,15 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+    return ({
+        _id: state.userReducer._id,
+        firstName: state.userReducer.firstName
+    })
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    userLoggedOn: (userData) => dispatch(userLoggedIn(userData)) 
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

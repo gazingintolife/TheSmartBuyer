@@ -23,10 +23,11 @@ const customerInfo = new Schema ({
     },
     address: String,
     city: String,
-    status: String,
-    CurrentOrder: {
-        currentOrderInfo: []
-    }
+    status: String
+},
+{
+  collection: "Users",
+  timestamps: true
 });
 
 module.exports = mongoose.model('customerModel' ,customerInfo);

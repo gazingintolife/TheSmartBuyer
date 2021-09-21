@@ -28,7 +28,7 @@ class List extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        product: state.reducer
+        product: state.orderReducer
     }
 }
 

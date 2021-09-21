@@ -2,5 +2,5 @@
 
 module.exports = {
   db: `${process.env.DB}`,
-  db_dev: "mongodb://localhost:27017",
+  db_dev: "mongodb://localhost:27017/TheSmartBuyer",
 };
