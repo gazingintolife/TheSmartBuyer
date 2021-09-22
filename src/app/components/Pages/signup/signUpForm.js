@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../../button/button";
 import "./signup.scss";
 
 class SignUpForm extends React.Component {
@@ -82,8 +83,6 @@ class SignUpForm extends React.Component {
 							value={this.state.lastName}
 							onChange={this.onLastNameChange}
 						/>
-					</div>
-
 					<input
 						className="signup-input-element"
 						type="number"
@@ -98,7 +97,14 @@ class SignUpForm extends React.Component {
 						value={this.state.password}
 						onChange={this.onPasswordChange}
 					/>
-					<button className="signup-green-btn">Sign Up</button>
+					<input 
+                        type = 'checkbox'
+                        id = 'TC'
+                    />
+                    <label for = "TC"><p> I agree to <a href = "/contact">Terms and Conditions</a> and <a href = "/checkout">Privacy Policy</a></p></label>
+					<Button className="signup-green-btn" onClick = {this.onSubmit} buttonText = "Sign Up" />
+					
+					</div>
 				</form>
 			</div>
 		);

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { userLoggedIn } from "../../../actions/signup";
 import "./login.scss";
+import { Button } from "../../button/button";
 
 const axios = require("axios").default;
 
@@ -83,7 +84,7 @@ class Login extends React.Component {
 						value={this.state.password}
 						onChange={this.onPasswordChange}
 					/>
-					<button className="login-btn">Log In</button>
+					<Button className="login-btn" onClick = {this.onSubmit} buttonText = "Log In" />
 				</form>
 			</div>
 		);
