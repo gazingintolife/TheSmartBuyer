@@ -1,18 +1,20 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Button } from '../button/button';
 import "./Header.scss";
 import Logo from "../../assets/logo.svg";
 
-const onLogOutClick = () => {
-  return (console.log("LogOut clicked"));
-}
+const Header = (props) => {
 
-const onLogInClick = () => {
-  return (<Redirect to = "/login"/>)
-}
+  const onLogInClick = () => {
+    console.log("clicked")
+    props.history.push(`/login`);
+  }
 
-const Header = () => {
+  const onLogOutClick = () => {
+    localStorage.clear();
+    props.history.push(`/signup`);
+  }
 
   return (
     <header className="header-container">
@@ -25,12 +27,12 @@ const Header = () => {
           <div>
           <Link className="white-btn" to="/account">My Account</Link>
           
-          <Button className="green-btn" onclick = {onLogOutClick} buttonText = "Log Out" />
+          <Button onClick = {onLogOutClick} buttonText = "Log Out" />
           </div>
         ):
         (
           <div>
-            <Button className="green-btn" onClick = {onLogInClick} buttonText = "Log In" />
+            <Button onClick = {onLogInClick} buttonText = "Log In" />
           </div>
         )}
          
@@ -41,5 +43,5 @@ const Header = () => {
   )
 };
 
-export default Header;
+export default withRouter(Header);
 

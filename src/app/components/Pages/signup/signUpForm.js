@@ -83,6 +83,7 @@ class SignUpForm extends React.Component {
 							value={this.state.lastName}
 							onChange={this.onLastNameChange}
 						/>
+					</div>
 					<input
 						className="signup-input-element"
 						type="number"
@@ -103,8 +104,6 @@ class SignUpForm extends React.Component {
                     />
                     <label for = "TC"><p> I agree to <a href = "/contact">Terms and Conditions</a> and <a href = "/checkout">Privacy Policy</a></p></label>
 					<Button className="signup-green-btn" onClick = {this.onSubmit} buttonText = "Sign Up" />
-					
-					</div>
 				</form>
 			</div>
 		);
