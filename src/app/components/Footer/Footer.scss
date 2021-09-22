@@ -1,0 +1,33 @@
+.footer-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 1rem 3rem;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 0.3rem;
+	width: fit-content;
+}
+
+.heart {
+	margin: auto 1rem;
+}
+
+.social-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #effaf1;
+	padding: 0.5rem;
+	border-radius: 3rem;
+}
+
+.social-container img {
+	margin: auto 0.5rem;
+}
+
+.footer-middle {
+	text-align: center;
+}

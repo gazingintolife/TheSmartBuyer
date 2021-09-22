@@ -1,0 +1,38 @@
+.login-container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.greet-text {
+	text-transform: uppercase;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.login-btn {
+	text-transform: uppercase;
+	background-color: #a1cbb5;
+	font-size: 18px;
+	border: none;
+	width: 12rem;
+	height: 4rem;
+	margin: auto;
+}
+
+.input-element {
+	margin: auto;
+	text-align: center;
+	width: 20rem;
+	height: 3.5rem;
+	margin-bottom: 2rem;
+	outline: none;
+	border: 0.1rem solid #a1cbb5;
+}
