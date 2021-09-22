@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { userLoggedIn } from "../../../actions/signup";
+import { Button } from "../../button/button";
 
 const axios = require('axios').default;
 
@@ -68,6 +69,7 @@ class Login extends React.Component {
     render(){
         return(
             <div>
+                <h2>We have missed you</h2>
                 <form onSubmit = {this.onSubmit}>
                     <input 
                         type = "number"
@@ -81,7 +83,7 @@ class Login extends React.Component {
                         value = {this.state.password}
                         onChange = {this.onPasswordChange}
                     />
-                    <button>Log In</button>
+                    <Button onClick = {this.onSubmit} buttonText = "Log In" />
                 </form>
             </div>
         )

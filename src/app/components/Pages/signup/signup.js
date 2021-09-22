@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { userLoggedIn } from '../../../actions/signup';
 import SignUpForm from './signUpForm';
 
@@ -43,8 +42,8 @@ class Signup extends React.Component {
     render(){
         return (
             <div>
+                <h2>Let's make your life a little smoother!</h2>
                 <SignUpForm onSubmit = {this.onSignUpSubmit}/>
-                <Link to = "/login">Login</Link>
             </div>
             )
     }

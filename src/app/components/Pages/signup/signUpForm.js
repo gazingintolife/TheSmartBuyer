@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 
 class SignUpForm extends React.Component {
     constructor(props){
@@ -84,6 +84,11 @@ class SignUpForm extends React.Component {
                         value = {this.state.password}
                         onChange = {this.onPasswordChange}
                     />
+                    <input 
+                        type = 'checkbox'
+                        id = 'TC'
+                    />
+                    <label for = "TC"><p> I agree to <a href = "/contact">Terms and Conditions</a> and <a href = "/checkout">Privacy Policy</a></p></label>
                     <button>Get Me Groceries</button>
                 </form>
             </div>
