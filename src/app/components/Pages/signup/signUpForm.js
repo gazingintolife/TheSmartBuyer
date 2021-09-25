@@ -103,7 +103,7 @@ class SignUpForm extends React.Component {
                         id = 'TC'
                     />
                     <label for = "TC"><p> I agree to <a href = "/contact">Terms and Conditions</a> and <a href = "/checkout">Privacy Policy</a></p></label>
-					<Button className="signup-green-btn" onClick = {this.onSubmit} buttonText = "Sign Up" />
+					<Button onClick = {this.onSubmit} buttonText = "Sign Up" />
 				</form>
 			</div>
 		);

@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-
-
 const { Schema } = mongoose;
 
 const customerInfo = new Schema ({
@@ -22,7 +20,6 @@ const customerInfo = new Schema ({
       require: true,
     },
     address: String,
-    city: String,
     status: String
 },
 {
@@ -30,4 +27,4 @@ const customerInfo = new Schema ({
   timestamps: true
 });
 
-module.exports = mongoose.model('customerModel' ,customerInfo);
+module.exports = mongoose.model('customer' ,customerInfo);

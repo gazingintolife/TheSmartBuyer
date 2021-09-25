@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const CustomerModel = require('../models/CustomerInfo');
+const CustomerModel = require('../models/customer');
 
 const getAllCustomerInfo = async (req, res) => {
   try {
@@ -89,8 +89,10 @@ const signUpCustomer = async (req, res) => {
     if (!customer) {
       throw new Error(`Customer could not be created`);
     }
-    res.status(201).json({
+    const token = jwt.sign({ _id: mobileChecker._id }, 'This_is_@_Token_Secret');
+    res.status(201).header('auth-token', token).json({
       success: true,
+      token: token,
       body: customer,
     })
   } catch(error) {

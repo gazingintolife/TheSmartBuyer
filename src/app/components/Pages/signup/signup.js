@@ -23,18 +23,15 @@ class Signup extends React.Component {
 			},
 		};
 
-		axios
-			.post("/api/v1/customer/signup", user, options)
+		axios.post("/api/v1/customer/signup", user, options)
 			.then((response) => {
 				this.props.userLoggedOn({
 					_id: response.data.body._id,
 					firstName: response.data.body.firstName,
 					lastName: response.data.body.lastName,
 				});
-				console.log(response);
-			})
-			.then(() => {
-				console.log(this.props.firstName, this.props._id);
+				
+				localStorage.setItem("auth-token", response.data.token);
 				return this.props.history.push(`/dashboard/${this.props._id}`);
 			})
 			.catch((err) => {

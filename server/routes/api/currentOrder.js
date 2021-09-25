@@ -1,4 +1,4 @@
-const Order = require('../../models/currentOrder');
+const Order = require('../../models/order');
 
 module.exports = (app) => {
 //     app.post('/api/currentOrder', (req, res, next) => {

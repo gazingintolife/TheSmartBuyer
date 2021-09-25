@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DepartmentList from "./DepartmentList";
-import DiscoveryList from "./DiscoveryList";
+import DiscoveryList from "./categoryList";
 import "./DiscoverMenu.scss";
 
 const DiscoveryMenu = () => {
