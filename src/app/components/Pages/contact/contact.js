@@ -8,8 +8,14 @@ class Contact extends React.Component {
         this.state = {
             email: '',
             body: '',
+            name: '',
             err: ''
         }
+    }
+
+    onNameChange = () => {
+        const name = e.target.value;
+		this.setState(() => ({ name: name }));
     }
 
     onEmailChange = () => {
@@ -27,20 +33,23 @@ class Contact extends React.Component {
 
         if (
 			!this.state.email ||
-			!this.state.body
+			!this.state.body ||
+            !this.state.name
 		) {
 			this.setState(() => ({ error: "Please fill all the fields" }));
 		} else {
 			this.setState(() => ({ error: "" }));
             const customerQuery = {
                 email : this.state.email,
-                body : this.state.body
+                body : this.state.body,
+                name: this.state.name
             } 
 			axios.post("/api/v1/contact", customerQuery)
             .then((res) => (console.log(res)))
 			this.setState(() => ({
 				email: "",
-				body: ""
+				body: "",
+                name: ""
 			}));
 		}
     }
@@ -50,6 +59,12 @@ class Contact extends React.Component {
             <div>
                 <h1> How can we help? </h1>
                 <form>
+                    <input
+                        type = "text"
+                        placeholder = "Name"
+                        value = {this.state.name}
+                        onChange = {this.onNameChange}
+                    />
                     <input
                         type = "email"
                         placeholder = "Email"
