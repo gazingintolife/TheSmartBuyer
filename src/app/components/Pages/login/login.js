@@ -50,9 +50,13 @@ class Login extends React.Component {
 						_id: response.data.body._id,
 						firstName: response.data.body.firstName,
 						lastName: response.data.body.lastName,
+						userLoggedIn: true,
 					});
 					if (response.status === 200) {
 						localStorage.setItem("auth-token", response.data.token);
+						localStorage.setItem("user_id", this.props._id);
+						localStorage.setItem("firstName", this.props.firstName);
+						localStorage.setItem("lastName", this.props.firstName);
 						this.props.history.push(`/dashboard/${this.props._id}`);
 					}
 					console.log(response);

@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Button } from '../button/button';
+import { connect } from "react-redux";
 import "./Header.scss";
 import Logo from "../../assets/logo.svg";
 
+
 const Header = (props) => {
 
+  // const _id = localStorage.getItem("user_id");
+  // const firstName = localStorage.getItem("firstName");
+  // const lastName = localStorage.getItem("lastName");
+  
+  // props.userInfo({
+  //   _id: _id,
+  //   firstName : firstName,
+  //   lastName: lastName,
+  // });
+  
   const onLogInClick = () => {
     console.log("clicked")
     props.history.push(`/login`);
@@ -16,6 +28,10 @@ const Header = (props) => {
     props.history.push(`/signup`);
   }
 
+  const onAccountClick = () => {
+    props.history.push(`/account/${props._id}`)
+  }
+
   return (
     <header className="header-container">
     
@@ -23,9 +39,9 @@ const Header = (props) => {
   
       <nav className="navigation">
         <Link className="white-btn" to="/contact">Contact</Link>
-        { localStorage.getItem('auth-token') ? (
+        { props.user ? (
           <div>
-          <Link className="white-btn" to="/account">My Account</Link>
+          <Button onClick = {onAccountClick} buttonText = "My Account" />
           
           <Button onClick = {onLogOutClick} buttonText = "Log Out" />
           </div>
@@ -35,7 +51,6 @@ const Header = (props) => {
             <Button onClick = {onLogInClick} buttonText = "Log In" />
           </div>
         )}
-         
       </nav>
   
       <hr />
@@ -43,5 +58,13 @@ const Header = (props) => {
   )
 };
 
-export default withRouter(Header);
+const mapStateToProps = (state) => {
+	return {
+    _id: state.userReducer._id,
+		user: state.userReducer.userLoggedIn
+	};
+};
+
+
+export default connect(mapStateToProps)(withRouter(Header));
 

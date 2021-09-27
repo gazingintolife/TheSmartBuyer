@@ -11,7 +11,7 @@ import dashboard from '../components/Pages/dashboard/dashboard';
 import signup from '../components/Pages/signup/signUp';
 import checkout from '../components/Pages/checkout/checkout';
 import contact from '../components/Pages/contact/contact';
-import account from '../components/Pages/account/account';
+import myAccount from '../components/Pages/account/account';
 import NotFound from '../components/NotFound/NotFound';
 import login from '../components/Pages/login/login';
 import PrivateRoute from './privateRoute';
@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/contact" component={contact}/>
           <PrivateRoute path= "/dashboard/:id?" component={dashboard}/>
           <PrivateRoute path="/checkout" component={checkout}/>
-          <PrivateRoute path="/account" component={account}/>
+          <PrivateRoute path="/account/:id?" component={myAccount}/>
           <Route component={NotFound}/>
         </Switch>
 

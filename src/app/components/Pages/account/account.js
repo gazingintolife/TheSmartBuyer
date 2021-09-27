@@ -1,11 +1,13 @@
 import React from 'react'
 
-const account = () => {
+const myAccount = () => {
+    const user = localStorage.getItem("firstName")
     return (
         <div>
-            <h1> This is myaccount Page </h1>
+            <h1> Hey {user}</h1>
+            <h3> Here is your account Information </h3>
         </div>
     )
 }
 
-export default account;
+export default myAccount;
