@@ -2,49 +2,19 @@
 	max-width: 1440px;
 	margin: auto;
 	margin-top: 3rem;
-	background-color: #effaf1;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 .brand {
-	width: 6rem;
-	height: 6rem;
+	width: 8rem;
+	height: 8rem;
 }
 
 .navigation {
 	width: 100%;
 	text-align: end;
-}
-
-.green-btn {
-	background-color: #a1cbb5;
-	padding: 1rem 1.5rem;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: black;
-	border-radius: 0.5rem;
-	margin: auto 1rem;
-	border: none;
-}
-
-.green-btn:hover {
-	color: black;
-}
-
-.white-btn {
-	background-color: white;
-	padding: 0.8rem 1.5rem;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: black;
-	border: 3px solid #a1cbb5;
-	box-sizing: border-box;
-	border-radius: 0.5rem;
-	margin: auto 1rem;
-}
-
-.white-btn:hover {
-	color: black;
+	display: flex;
+	justify-content: flex-end;
 }

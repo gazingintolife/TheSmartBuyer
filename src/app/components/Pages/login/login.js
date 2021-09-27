@@ -84,7 +84,11 @@ class Login extends React.Component {
 						value={this.state.password}
 						onChange={this.onPasswordChange}
 					/>
-					<Button className="login-btn" onClick = {this.onSubmit} buttonText = "Log In" />
+					<Button
+						variant="green"
+						onClick={this.onSubmit}
+						buttonText="Log In"
+					/>
 				</form>
 			</div>
 		);

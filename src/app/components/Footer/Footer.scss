@@ -1,17 +1,16 @@
 .footer-container {
-	position: absolute;
 	width: 100%;
-	bottom: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	padding: 1rem 3rem;
+	margin-top: 2rem;
+	max-width: 1500px;
+	margin: auto;
 }
 
-.footer-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 0.3rem;
-	width: fit-content;
+.footer-left {
+	text-align: center;
+	justify-self: start;
 }
 
 .heart {
@@ -35,4 +34,5 @@
 
 .footer-middle {
 	text-align: center;
+	align-self: center;
 }

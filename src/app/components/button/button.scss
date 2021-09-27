@@ -1,0 +1,28 @@
+.green-btn {
+	background-color: #40916c;
+	padding: 1rem 2rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 0.5rem;
+	margin: auto 1rem;
+	border: none;
+	font-weight: bold;
+	color: white;
+}
+
+.white-btn {
+	background-color: white;
+	padding: 0.8rem 1.5rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	border: 3px solid #a1cbb5;
+	box-sizing: border-box;
+	border-radius: 0.5rem;
+	margin: auto 1rem;
+}
+
+.white-btn:hover {
+	color: black;
+}
