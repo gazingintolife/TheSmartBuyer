@@ -13,17 +13,17 @@ class Contact extends React.Component {
         }
     }
 
-    onNameChange = () => {
+    onNameChange = (e) => {
         const name = e.target.value;
 		this.setState(() => ({ name: name }));
     }
 
-    onEmailChange = () => {
+    onEmailChange = (e) => {
         const email = e.target.value;
 		this.setState(() => ({ email: email }));
     }
 
-    onBodyChange = () => {
+    onBodyChange = (e) => {
         const body = e.target.value;
 		this.setState(() => ({ body: body }));
     }
@@ -84,4 +84,4 @@ class Contact extends React.Component {
     }
 }
 
-export default contact;
+export default Contact;
