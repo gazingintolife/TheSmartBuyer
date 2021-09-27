@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./DiscoverMenu.scss";
 
 const DepartmentItem = (props) => {
-	return <div className="department">{props?.department}</div>;
+	return (<div className="department">{props?.department}</div>);
 };
 
 const DepartmentList = (props) => {

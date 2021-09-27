@@ -1,4 +1,4 @@
-const product_category = require('../../models/Category');
+const product_category = require('../models/Category');
 
 module.exports = (app) => {
     app.get('/api/getMenuItems', (req,res,next) => {

@@ -1,10 +1,35 @@
-import React from 'react';
+import React from "react";
+import "./Footer.scss";
+import Heart from "../../assets/Michael's Heart.svg";
+import Google from "../../assets/Google.svg";
+import Linkedin from "../../assets/LinkedIN.svg";
+import Facebook from "../../assets/fb.svg";
+import Twitter from "../../assets/Twitter.svg";
+import Instagram from "../../assets/Instagram.svg";
 
 const Footer = () => (
-  <footer>
-    <hr />
-    <p>Footer</p>
-  </footer>
+	<footer className="footer-container">
+		<div className="footer-grid">
+			<div>Text</div>
+			<div>Text</div>
+			<div>Text</div>
+			<div>Text</div>
+			<div>Text</div>
+			<div>Text</div>
+			<div>Text</div>
+			<div>Text</div>
+		</div>
+		<div className="footer-middle">
+			Made with <img className="heart" src={Heart} alt="" /> in Toronto
+		</div>
+		<div className="social-container">
+			<img src={Google} alt="" />
+			<img src={Linkedin} alt="" />
+			<img src={Facebook} alt="" />
+			<img src={Twitter} alt="" />
+			<img src={Instagram} alt="" />
+		</div>
+	</footer>
 );
 
 export default Footer;

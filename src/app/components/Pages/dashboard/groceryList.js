@@ -13,7 +13,6 @@ class GroceryList extends React.Component {
     }
 
     onSubmit = (product) => {
-        // this.props.addProductToList(product);
         const options = {
             method: 'POST',
             headers: {
@@ -21,7 +20,7 @@ class GroceryList extends React.Component {
             },
             body: JSON.stringify(product),
         }
-        console.log(JSON.stringify(product));
+        console.log(product);
         fetch('/api/currentOrder', options)
         .then(res => res.json())
         .then(json => {
