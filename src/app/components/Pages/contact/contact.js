@@ -1,87 +1,103 @@
-import axios from 'axios';
-import React, { useState } from 'react'
-import { Button } from '../../button/button';
+import axios from "axios";
+import React, { useState } from "react";
+import { Button } from "../../button/button";
+import "./contact.scss";
 
 class Contact extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            email: '',
-            body: '',
-            name: '',
-            err: ''
-        }
-    }
+	constructor(props) {
+		super(props);
+		this.state = {
+			email: "",
+			body: "",
+			name: "",
+			err: "",
+		};
+	}
 
-    onNameChange = (e) => {
-        const name = e.target.value;
+	onNameChange = (e) => {
+		const name = e.target.value;
 		this.setState(() => ({ name: name }));
-    }
+	};
 
-    onEmailChange = (e) => {
-        const email = e.target.value;
+	onEmailChange = (e) => {
+		const email = e.target.value;
 		this.setState(() => ({ email: email }));
-    }
+	};
 
-    onBodyChange = (e) => {
-        const body = e.target.value;
+	onBodyChange = (e) => {
+		const body = e.target.value;
 		this.setState(() => ({ body: body }));
-    }
+	};
 
-    onSubmit = (e) => {
-        e.preventDefault();
+	onSubmit = (e) => {
+		e.preventDefault();
 
-        if (
-			!this.state.email ||
-			!this.state.body ||
-            !this.state.name
-		) {
+		if (!this.state.email || !this.state.body || !this.state.name) {
 			this.setState(() => ({ error: "Please fill all the fields" }));
 		} else {
 			this.setState(() => ({ error: "" }));
-            const customerQuery = {
-                email : this.state.email,
-                body : this.state.body,
-                name: this.state.name
-            } 
-			axios.post("/api/v1/contact", customerQuery)
-            .then((res) => (console.log(res)))
+			const customerQuery = {
+				email: this.state.email,
+				body: this.state.body,
+				name: this.state.name,
+			};
+			axios
+				.post("/api/v1/contact", customerQuery)
+				.then((res) => console.log(res));
 			this.setState(() => ({
 				email: "",
 				body: "",
-                name: ""
+				name: "",
 			}));
 		}
-    }
-    
-    render(){
-        return (
-            <div>
-                <h1> How can we help? </h1>
-                <form>
-                    <input
-                        type = "text"
-                        placeholder = "Name"
-                        value = {this.state.name}
-                        onChange = {this.onNameChange}
-                    />
-                    <input
-                        type = "email"
-                        placeholder = "Email"
-                        value = {this.state.email}
-                        onChange = {this.onEmailChange}
-                    />
-                    <input
-                        type = "text"
-                        placeholder = "How can we help?"
-                        value = {this.state.body}
-                        onChange = {this.onBodyChange}
-                    />
-                    <Button onClick = {this.onSubmit} buttonText = "Submit"/>
-                </form>
-            </div>
-        )
-    }
+	};
+
+	render() {
+		return (
+			<div className="contact-container">
+				<div className="find-products">
+					Can’t find the products You love? <br />
+					Need help with your order?
+					<br />
+					Wish to understand Better how our service works?
+				</div>
+				<h1 className="contact-heading"> How can we help? </h1>
+				<p className="fill-out">
+					Fill out the form below and we <br /> will reach out to you
+					shortly and <br /> do our best to help you
+				</p>
+				<form className="form-container">
+					<input
+						type="text"
+						placeholder="Name"
+						value={this.state.name}
+						className="contact-input-element"
+						onChange={this.onNameChange}
+					/>
+					<input
+						type="email"
+						placeholder="Email"
+						value={this.state.email}
+						className="contact-input-element"
+						onChange={this.onEmailChange}
+					/>
+					<textarea
+						rows="5"
+						type="text"
+						placeholder="How can we help?"
+						value={this.state.body}
+						className="contact-input-element"
+						onChange={this.onBodyChange}
+					/>
+					<Button
+						variant="green"
+						onClick={this.onSubmit}
+						buttonText="Submit"
+					/>
+				</form>
+			</div>
+		);
+	}
 }
 
 export default Contact;

@@ -1,9 +1,5 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom'
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -17,9 +13,9 @@ import login from '../components/Pages/login/login';
 import PrivateRoute from './privateRoute';
 
 const App = () => (
-  <Router>
-      <div>
-        <Header />
+	<Router>
+		<div>
+			<Header />
 
         <Switch>
           <Route exact path="/signup" component={signup}/>
@@ -31,9 +27,9 @@ const App = () => (
           <Route component={NotFound}/>
         </Switch>
 
-        <Footer />
-      </div>
-  </Router>
+			<Footer />
+		</div>
+	</Router>
 );
 
 export default App;

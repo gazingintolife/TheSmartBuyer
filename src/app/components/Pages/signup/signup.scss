@@ -1,9 +1,10 @@
 .signup-container {
 	width: 100%;
+	min-height: 70vh;
 	max-width: 1440px;
+	align-items: center;
 	margin: auto;
 	display: grid;
-	padding-top: 6rem;
 	grid-template-columns: 2fr 1fr;
 }
 
@@ -20,8 +21,6 @@
 .signup-head {
 	text-transform: uppercase;
 	margin-bottom: 2rem;
-	padding-left: 4rem;
-	padding-right: 4rem;
 }
 
 .flow-container {
@@ -71,4 +70,20 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 1rem;
+}
+
+.agree {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2rem;
+	font-size: 14px;
+}
+
+.agree p {
+	margin: 0;
+	margin-left: 1rem;
+	color: black;
+	text-transform: uppercase;
 }

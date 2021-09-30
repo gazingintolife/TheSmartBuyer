@@ -9,15 +9,9 @@ import Instagram from "../../assets/Instagram.svg";
 
 const Footer = () => (
 	<footer className="footer-container">
-		<div className="footer-grid">
-			<div>Text</div>
-			<div>Text</div>
-			<div>Text</div>
-			<div>Text</div>
-			<div>Text</div>
-			<div>Text</div>
-			<div>Text</div>
-			<div>Text</div>
+		<div className="footer-left">
+			+1 647-549-1055 731 <br /> Constellation Drive Mississauga ON <br />{" "}
+			L5R2V7
 		</div>
 		<div className="footer-middle">
 			Made with <img className="heart" src={Heart} alt="" /> in Toronto

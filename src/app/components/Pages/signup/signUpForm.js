@@ -65,7 +65,7 @@ class SignUpForm extends React.Component {
 		return (
 			<div className="signup-right">
 				<h4 className="signup-head">
-					Let’s Make your life a little Smoother
+					Let’s Make your life <br /> a little Smoother
 				</h4>
 				<form className="signup-form" onSubmit={this.onSubmit}>
 					<div className="names-input">
@@ -98,12 +98,24 @@ class SignUpForm extends React.Component {
 						value={this.state.password}
 						onChange={this.onPasswordChange}
 					/>
-					<input 
-                        type = 'checkbox'
-                        id = 'TC'
-                    />
-                    <label for = "TC"><p> I agree to <a href = "/contact">Terms and Conditions</a> and <a href = "/checkout">Privacy Policy</a></p></label>
-					<Button onClick = {this.onSubmit} buttonText = "Sign Up" />
+					<div className="agree">
+						<input type="checkbox" id="TC" />
+						<label for="TC">
+							<p>
+								{" "}
+								I agree to{" "}
+								<a href="/contact">
+									Terms and Conditions
+								</a> and <a href="/checkout">Privacy Policy</a>
+							</p>
+						</label>
+					</div>
+
+					<Button
+						variant="green"
+						onClick={this.onSubmit}
+						buttonText="Sign Up"
+					/>
 				</form>
 			</div>
 		);
