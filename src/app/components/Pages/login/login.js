@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { userLoggedIn } from "../../../actions/signup";
 import "./login.scss";
 import { Button } from "../../button/button";
+import Header from "../../Header/Header";
 
 const axios = require("axios").default;
 
@@ -54,9 +55,6 @@ class Login extends React.Component {
 					});
 					if (response.status === 200) {
 						localStorage.setItem("auth-token", response.data.token);
-						localStorage.setItem("user_id", this.props._id);
-						localStorage.setItem("firstName", this.props.firstName);
-						localStorage.setItem("lastName", this.props.firstName);
 						this.props.history.push(`/dashboard/${this.props._id}`);
 					}
 					console.log(response);
@@ -71,29 +69,32 @@ class Login extends React.Component {
 
 	render() {
 		return (
-			<div className="login-container">
-				<form className="form-container" onSubmit={this.onSubmit}>
-					<h3 className="greet-text">We have missed you!</h3>
-					<input
-						className="input-element"
-						type="number"
-						placeholder="PHONE NUMBER"
-						value={this.state.mobile}
-						onChange={this.onMobileChange}
-					/>
-					<input
-						className="input-element"
-						type="text"
-						placeholder="PASSWORD"
-						value={this.state.password}
-						onChange={this.onPasswordChange}
-					/>
-					<Button
-						variant="green"
-						onClick={this.onSubmit}
-						buttonText="Log In"
-					/>
-				</form>
+			<div>
+				<Header buttonOne = "Contact" buttonLast = "Sign Up"/>
+				<div className="login-container">
+					<form className="form-container" onSubmit={this.onSubmit}>
+						<h3 className="greet-text">We have missed you!</h3>
+						<input
+							className="input-element"
+							type="number"
+							placeholder="PHONE NUMBER"
+							value={this.state.mobile}
+							onChange={this.onMobileChange}
+						/>
+						<input
+							className="input-element"
+							type="text"
+							placeholder="PASSWORD"
+							value={this.state.password}
+							onChange={this.onPasswordChange}
+						/>
+						<Button
+							variant="green"
+							onClick={this.onSubmit}
+							buttonText="Log In"
+						/>
+					</form>
+				</div>
 			</div>
 		);
 	}

@@ -7,6 +7,7 @@ import "./signup.scss";
 import File from "../../../assets/File.svg";
 import Truck from "../../../assets/Truck.svg";
 import Arrow from "../../../assets/Arrow.svg";
+import Header from "../../Header/Header";
 
 const axios = require("axios");
 
@@ -32,9 +33,6 @@ class Signup extends React.Component {
 				});
 				
 				localStorage.setItem("auth-token", response.data.token);
-				localStorage.setItem("user_id", this.props._id);
-				localStorage.setItem("firstName", this.props.firstName);
-				localStorage.setItem("lastName", this.props.firstName);
 				return this.props.history.push(`/dashboard/${this.props._id}`);
 			})
 			.catch((err) => {
@@ -43,25 +41,28 @@ class Signup extends React.Component {
 	};
 	render() {
 		return (
-			<div className="signup-container">
-				<div className="signup-left">
-					<div className="flow-container">
-						<div className="flow-circle">
-							<img src={File} alt="" />
-							<p className="mt-2">Create your grocery list</p>
+			<div className = "">
+				<Header buttonOne = "Contact" buttonLast = "Login"/>
+				<div className="signup-container">
+					<div className="signup-left">
+						<div className="flow-container">
+							<div className="flow-circle">
+								<img src={File} alt="" />
+								<p className="mt-2">Create your grocery list</p>
+							</div>
+							<img className="mx-4" src={Arrow} alt="" />
+							<div className="flow-circle">
+								<img src={Truck} alt="" />
+								<p className="mt-2">
+									Receive your groceries Weekly
+								</p>
+							</div>
 						</div>
-						<img className="mx-4" src={Arrow} alt="" />
-						<div className="flow-circle">
-							<img src={Truck} alt="" />
-							<p className="mt-2">
-								Receive your groceries Weekly
-							</p>
-						</div>
+						<h2 className="its-simple">It’s that simple!</h2>
 					</div>
-					<h2 className="its-simple">It’s that simple!</h2>
+					<SignUpForm onSubmit={this.onSignUpSubmit} />
+					{/* <Link to="/login">Login</Link> */}
 				</div>
-				<SignUpForm onSubmit={this.onSignUpSubmit} />
-				{/* <Link to="/login">Login</Link> */}
 			</div>
 		);
 	}

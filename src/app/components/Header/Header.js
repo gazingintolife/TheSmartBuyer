@@ -6,64 +6,60 @@ import "./Header.scss";
 import Logo from "../../assets/logo.svg";
 
 
+
 const Header = (props) => {
-	const onLogInClick = () => {
+
+	const onLastButtonClick = () => {
 		console.log("clicked");
-		props.history.push(`/login`);
+		console.log(props.buttonLast);
+		if(props.buttonLast == "Sign Up"){
+			props.history.push(`/signup`);
+		}else if(props.buttonLast == "Login"){
+			props.history.push(`/login`);
+		}
+		else if(props.buttonLast == "Log Out"){
+			localStorage.clear();
+			props.history.push(`/signup`);
+		}	
 	};
 
-  // const _id = localStorage.getItem("user_id");
-  // const firstName = localStorage.getItem("firstName");
-  // const lastName = localStorage.getItem("lastName");
-  
-  // props.userInfo({
-  //   _id: _id,
-  //   firstName : firstName,
-  //   lastName: lastName,
-  // });
-  
-	const onLogOutClick = () => {
-		localStorage.clear();
-		props.history.push(`/signup`);
-	};
+	const onAccountClick = () => {
+    	props.history.push(`/account/${props._id}`);
+  	}
+	
+	const onDashboardClick = () => {
+		props.history.push(`/dashboard/${props._id}`);
+	}
 
-  const onAccountClick = () => {
-    props.history.push(`/account/${props._id}`)
-  }
-
-  return (
-    <header className="header-container">
-    
-    <img className="brand" src={Logo} alt="" />
-  
-      <nav className="navigation">
-        <Link className="white-btn" to="/contact">Contact</Link>
-        { props.user ? (
-          <div>
-          <Button onClick = {onAccountClick} buttonText = "My Account" />
-          
-          <Button variant="white" onClick = {onLogOutClick} buttonText = "Log Out" />
-          </div>
-        ):
-        (
-          <div>
-            <Button variant="green" onClick = {onLogInClick} buttonText = "Log In" />
-          </div>
-        )}
-      </nav>
-  
-      <hr />
-    </header>
-  )
-};
+	return (
+		<header className="header-container">
+			<Link to = ""><img className="brand" src={Logo} alt="" /></Link>
+			<nav className="navigation">
+				{ props.user ? (
+					<div>
+						<Button onClick = {onDashboardClick} buttonText = "Dashboard" />
+						<Link className="white-btn" to="/contact">Contact</Link>
+						<Button onClick = {onAccountClick} buttonText = "My Account" />
+						<Button variant="green" onClick = {onLastButtonClick} buttonText = {props.buttonLast} />
+					</div>
+					):
+					(
+					<div>
+						<Link className="white-btn" to="/contact">Contact</Link>
+					   	<Button variant="green" onClick = {onLastButtonClick} buttonText = {props.buttonLast} />
+					</div>
+					)}
+			</nav>
+		</header>
+	)
+}
 
 const mapStateToProps = (state) => {
 	return {
     _id: state.userReducer._id,
-		user: state.userReducer.userLoggedIn
+	user: state.userReducer.userLoggedIn
 	};
 };
 
 
 export default connect(mapStateToProps)(withRouter(Header));
-
