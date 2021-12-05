@@ -41,10 +41,10 @@ class Signup extends React.Component {
 	};
 	render() {
 		return (
-			<div className = "">
+			<div className = "signup">
 				<Header buttonOne = "Contact" buttonLast = "Login"/>
 				<div className="signup-container">
-					<div className="signup-left">
+					<d iv className="signup-left">
 						<div className="flow-container">
 							<div className="flow-circle">
 								<img src={File} alt="" />
@@ -59,7 +59,7 @@ class Signup extends React.Component {
 							</div>
 						</div>
 						<h2 className="its-simple">It’s that simple!</h2>
-					</div>
+					</d>
 					<SignUpForm onSubmit={this.onSignUpSubmit} />
 					{/* <Link to="/login">Login</Link> */}
 				</div>

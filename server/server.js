@@ -36,7 +36,7 @@ app.use(express.json());
 // require('./routes')(app);
 app.use('/api/v1/customer', customerInfoRouter);
 app.use('/api/v1', contactRouter);
-app.get('/', (req, res) => res.send('NOICE'));
+// app.get('/', (req, res) => res.send('NOICE'));
 
 if (isDev) {
   const compiler = webpack(webpackConfig);

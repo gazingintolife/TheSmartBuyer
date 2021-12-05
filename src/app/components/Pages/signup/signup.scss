@@ -1,9 +1,10 @@
+
+
 .signup-container {
 	width: 100%;
 	min-height: 70vh;
-	max-width: 1440px;
 	align-items: center;
-	margin: auto;
+	margin-right: auto;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 }
@@ -15,6 +16,7 @@
 .signup-right {
 	padding-left: 3rem;
 	padding-right: 3rem;
+	margin-right: 4rem;
 	text-align: center;
 }
 

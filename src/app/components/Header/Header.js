@@ -19,7 +19,7 @@ const Header = (props) => {
 		}
 		else if(props.buttonLast == "Log Out"){
 			localStorage.clear();
-			props.history.push(`/signup`);
+			props.history.push(`/`);
 		}	
 	};
 
@@ -36,7 +36,7 @@ const Header = (props) => {
 			<Link to = ""><img className="brand" src={Logo} alt="" /></Link>
 			<nav className="navigation">
 				{ props.user ? (
-					<div>
+					<div className = "nav-items">
 						<Button onClick = {onDashboardClick} buttonText = "Dashboard" />
 						<Link className="white-btn" to="/contact">Contact</Link>
 						<Button onClick = {onAccountClick} buttonText = "My Account" />
@@ -44,7 +44,7 @@ const Header = (props) => {
 					</div>
 					):
 					(
-					<div>
+					<div className = "nav-items">
 						<Link className="white-btn" to="/contact">Contact</Link>
 					   	<Button variant="green" onClick = {onLastButtonClick} buttonText = {props.buttonLast} />
 					</div>

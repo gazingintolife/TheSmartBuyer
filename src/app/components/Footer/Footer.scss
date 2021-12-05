@@ -1,26 +1,16 @@
 .footer-container {
 	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
 	padding: 1rem 3rem;
 	margin-top: 2rem;
-	max-width: 1500px;
 	margin: auto;
 }
-
-.footer-left {
-	text-align: center;
-	justify-self: start;
-}
-
-.heart {
-	margin: auto 1rem;
-}
-
 .social-container {
 	width: fit-content;
-	justify-self: end;
-	display: flex;
+	justify-self: center;
+	display: block;
 	justify-content: center;
 	align-items: center;
 	background-color: #effaf1;
@@ -30,9 +20,4 @@
 
 .social-container img {
 	margin: auto 0.5rem;
-}
-
-.footer-middle {
-	text-align: center;
-	align-self: center;
 }

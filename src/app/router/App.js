@@ -15,7 +15,7 @@ const App = () => (
 	<Router>
 		<div>
         <Switch>
-          <Route exact path="/signup" component={signup}/>
+          <Route exact path="/" component={signup}/>
           <Route path="/login" component={login}/>
           <Route path="/contact" component={contact}/>
           <PrivateRoute path= "/dashboard/:id?" component={dashboard}/>

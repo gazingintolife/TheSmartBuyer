@@ -1,8 +1,8 @@
 .header-container {
-	max-width: 1440px;
-	margin: auto;
-	margin-top: 3rem;
+	max-height: fit-content;
+	margin: 0 16px;
 	display: flex;
+	flex-flow: row;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -10,6 +10,8 @@
 .brand {
 	width: 8rem;
 	height: 8rem;
+	position: relative;
+	left: 12rem;
 }
 
 .navigation {
@@ -17,4 +19,9 @@
 	text-align: end;
 	display: flex;
 	justify-content: flex-end;
+	margin-right: 6rem;
+}
+
+.nav-items {
+	display: flex;
 }
