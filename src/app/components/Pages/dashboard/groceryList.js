@@ -26,13 +26,12 @@ class GroceryList extends React.Component {
             body: JSON.stringify(product),
         }
         console.log(product);
-        fetch('/api/currentOrder', options)
+        fetch('/api/postcurrentOrderItems', options)
         .then(res => res.json())
         .then(json => {
             this.props.addProductToList(json);
         })
     }
-
     render() {
         return (
             <div>

@@ -78,7 +78,7 @@ const signUpCustomer = async (req, res) => {
     if (!body.password) {
       throw new Error('Please add an appropriate password');
     }
-    if (!body.firstName || !body.lastName) {
+    if (!body.fullName) {
       throw new Error('Please add an appropriate first name & last name');
     }
     const salt = await bcrypt.genSalt(10);

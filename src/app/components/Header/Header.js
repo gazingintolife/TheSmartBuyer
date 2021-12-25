@@ -13,7 +13,7 @@ const Header = (props) => {
 		console.log("clicked");
 		console.log(props.buttonLast);
 		if(props.buttonLast == "Sign Up"){
-			props.history.push(`/signup`);
+			props.history.push(`/`);
 		}else if(props.buttonLast == "Login"){
 			props.history.push(`/login`);
 		}

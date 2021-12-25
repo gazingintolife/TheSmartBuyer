@@ -28,8 +28,7 @@ class Signup extends React.Component {
 			.then((response) => {
 				this.props.userLoggedOn({
 					_id: response.data.body._id,
-					firstName: response.data.body.firstName,
-					lastName: response.data.body.lastName,
+					fullName: response.data.body.fullName,
 				});
 				
 				localStorage.setItem("auth-token", response.data.token);

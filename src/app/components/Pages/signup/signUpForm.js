@@ -44,14 +44,15 @@ class SignUpForm extends React.Component {
 			!this.state.password
 		) {
 			this.setState(() => ({ error: "Please fill all the fields" }));
-		} else {
+		}else {
 			this.setState(() => ({ error: "" }));
+			
 			this.props.onSubmit({
-				firstName: this.state.firstName,
-				lastName: this.state.lastName,
+				fullName: this.state.firstName + " " + this.state.lastName,
 				mobile: this.state.mobile,
 				password: this.state.password,
 			});
+
 			this.setState(() => ({
 				firstName: "",
 				lastName: "",
